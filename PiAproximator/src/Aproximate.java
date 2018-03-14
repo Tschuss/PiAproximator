@@ -5,7 +5,8 @@ public class Aproximate {
 		double x,y,d,pi;
 		double circulo=0.0;
 		//StringBuffer trace=new StringBuffer();
-		for(int cuadrado=0;;cuadrado++) {
+		long start=System.currentTimeMillis();
+		for(int cuadrado=0;cuadrado<=Double.MAX_VALUE;cuadrado++) {
 			x=Math.random();
 			y=Math.random();
 			d=Math.sqrt(Math.pow(x,2.0)+Math.pow(y,2.0));
@@ -15,7 +16,7 @@ public class Aproximate {
 
 			if (cuadrado%10000000==1) {
 				pi=4*circulo/cuadrado;
-				
+						
 				/*
 				trace.delete(0, trace.length());		
 				trace.append(i);
@@ -32,9 +33,12 @@ public class Aproximate {
 				trace.append("\t");
 				trace.append(pi);	
 				System.out.println(trace.toString());
-				*/
+*/				
 				System.out.println(pi);
-			}
-		}
+			} //if
+		}//for
+		long end=System.currentTimeMillis();
+
+		System.out.println((end-start)/1000+"s>>"+4*circulo/Double.MAX_VALUE);
 	}
 }
