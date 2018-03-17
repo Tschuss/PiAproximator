@@ -31,7 +31,6 @@ public class Aproximate {
 	
 	public static void aproximaAreaPoligoPorTriangulosRectangulos() {
 
-		
 		double lado=1;//Math.sqrt(2.0)/2.0;
 		double area, area_ant=0, delta, base;
 		for (long nl=4; nl<Long.MAX_VALUE;nl=nl*2 ) {
