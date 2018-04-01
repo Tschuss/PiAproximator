@@ -1,18 +1,25 @@
+import javax.swing.JPanel;
 
 public class Aproximate {
 
 	public static void main(String[] args) {
-		PiAproxByRiemannIntegration();
+		//PiAproxByRiemannIntegration();
+		aproximaAreaPoligoPorTriangulosRectangulos();
 	}
 	
 	public static void Montecarlo() {
 		double pi;
 		double circulo=0.0;
+		double x,y=0.0;
 		//StringBuffer trace=new StringBuffer();
 		long start=System.currentTimeMillis();
 		for(long cuadrado=0;cuadrado<=Long.MAX_VALUE;cuadrado++) {
 
-			if (Math.sqrt(Math.pow(Math.random(),2.0)+Math.pow(Math.random(),2.0))<=1.0) {
+			x=Math.random();
+			y=Math.random();
+			
+			
+			if (Math.sqrt(Math.pow(x,2.0)+Math.pow(y,2.0))<=1.0) {
 				circulo++;
 			}
 
@@ -31,9 +38,10 @@ public class Aproximate {
 	
 	public static void aproximaAreaPoligoPorTriangulosRectangulos() {
 
-		double lado=1;//Math.sqrt(2.0)/2.0;
+		double lado=1.0;//Math.sqrt(2.0)/2.0;
 		double area, area_ant=0, delta, base;
-		for (long nl=4; nl<Long.MAX_VALUE;nl=nl*2 ) {
+		for (long nl=4; nl>0 ;nl=nl*2 ) { 
+
 
 			area=nl*lado/2.0;
 			delta=(area-area_ant)/nl;
@@ -43,7 +51,7 @@ public class Aproximate {
 			lado=Math.sqrt(Math.pow(base,2.0)+Math.pow(lado, 2.0))/2.0;
 			
 			area_ant=area;
-			System.out.println("l="+lado+ "\t pi="+area);
+			System.out.println("#l="+nl+"\tl="+lado+ "\t pi="+area);
 
 		}
 		
