@@ -57,8 +57,8 @@ public class MontecarloDrown extends JPanel {
 //		g.drawArc(0,0, size, size, 0, 360);
 		
 
-		x=Math.random();
-		y=Math.random();
+		x=Math.random()*2.0-1.0;
+		y=Math.random()*2.0-1.0;
 		cuadrado++;
 		if (Math.sqrt(Math.pow(x,2.0)+Math.pow(y,2.0))<=1.0) {
 			circulo++;
@@ -67,8 +67,8 @@ public class MontecarloDrown extends JPanel {
 			g.setColor(Color.BLUE);
 			
 		}
-		int xx=(int)Math.round(x*SIZE);
-		int yy=(int)Math.round(y*SIZE);
+		int xx=(int)Math.round(x*SIZE/2+SIZE/2);
+		int yy=(int)Math.round(y*SIZE/2+SIZE/2);
 		g.drawLine(xx, yy, xx, yy);
 	//	System.out.println("("+xx+","+yy+") >> PI="+4*circulo/cuadrado);
 	}
